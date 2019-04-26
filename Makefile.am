@@ -14,6 +14,8 @@ libguilexlib_la_SOURCES = guile-xlib.c $(BUILT_SOURCES)
 libguilexlib_la_LDFLAGS = -version-info 0:0 -export-dynamic 
 libguilexlib_la_CFLAGS = $(GUILE_CFLAGS)
 libguilexlib_la_LIBADD = $(X_LIBS) $(X_PRE_LIBS) -lX11 $(X_EXTRA_LIBS) $(GUILE_LIBS)
+libguilexlib_ladir = $(includedir)
+libguilexlib_la_HEADERS = guile-xlib.h
 
 scmdatadir = $(datadir)/guile/xlib
 scmdata_DATA = xlib.scm
@@ -24,7 +26,7 @@ EXTRA_DIST = $(scmdata_DATA) autogen.sh
 SUFFIXES = .x
 SNARF = guile-snarf
 .c.x:
-	$(SNARF) $(DEFS) $(INCLUDES) $(GUILE_CFLAGS) $(CPPFLAGS) $(CFLAGS) $< > $@
+	$(SNARF) -o $@ $(INCLUDES) $(GUILE_CFLAGS) $(CPPFLAGS) $<
 
 info_TEXINFOS = guile-xlib.texi
 guile_xlib_TEXINFOS = xlib.texi
