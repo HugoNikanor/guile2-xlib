@@ -17,7 +17,7 @@ libguilexlib_la_LIBADD = $(X_LIBS) $(X_PRE_LIBS) -lX11 $(X_EXTRA_LIBS) $(GUILE_L
 libguilexlib_ladir = $(includedir)
 libguilexlib_la_HEADERS = guile-xlib.h
 
-scmdatadir = $(datadir)/guile/xlib
+scmdatadir = $(datadir)/guile/site/xlib
 scmdata_DATA = xlib.scm
 
 EXTRA_DIST = $(scmdata_DATA) autogen.sh
