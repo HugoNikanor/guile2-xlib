@@ -1,4 +1,4 @@
-AC_INIT(guile2-xlib, 0.1)
+AC_INIT(guile2-xlib, 0.2)
 AC_CONFIG_SRCDIR(guile-xlib.c)
 AM_INIT_AUTOMAKE
 AC_CONFIG_MACRO_DIR([m4])
