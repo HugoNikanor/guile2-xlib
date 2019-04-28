@@ -2356,6 +2356,15 @@ static SCM copy_event_fields (SCM display, XEvent *e, SCM event, const char *fun
       scm_c_vector_set_x(event, XEVENT_SLOT_COUNT,        scm_from_int (E.count));
       break;
 #undef E
+
+    default:
+      /* Default to a type value of -1. This makes the scheme code safer since
+       * event:type will always return an integer. This will both be triggered
+       * for any event type not mentioned above, as well as the first event
+       * captured, which might contain garbage data.
+       */
+      scm_c_vector_set_x(event, XEVENT_SLOT_TYPE, scm_from_int(-1));
+      break;
     }
 
   return event;
