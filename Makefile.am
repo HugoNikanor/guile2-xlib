@@ -20,6 +20,9 @@ libguilexlib_la_HEADERS = guile-xlib.h
 scmdatadir = $(datadir)/guile/site/xlib
 scmdata_DATA = xlib.scm
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = guile2-xlib.pc
+
 EXTRA_DIST = $(scmdata_DATA) autogen.sh
 
 ## We assume the user has already installed Guile.
