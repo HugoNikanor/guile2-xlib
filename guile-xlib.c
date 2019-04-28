@@ -2620,6 +2620,32 @@ SCM_DEFINE (scm_x_window_event_x, "x-window-event!", 2, 1, 0,
 }
 #undef FUNC_NAME
 
+SCM_DEFINE (scm_x_resize_window_x, "x-resize-window!", 3, 0, 0,
+            (SCM window,
+             SCM width,
+             SCM height),
+            "")
+#define FUNC_NAME s_scm_x_window_event_x
+{
+  SCM display1;
+  xdisplay_t *dsp;
+  xwindow_t *win;
+
+  display1 = valid_dsp (window, SCM_ARG1, XDISPLAY_STATE_OPEN, FUNC_NAME);
+  dsp = XDISPLAY (display1);
+  win = valid_win (window, SCM_ARG1, ~XWINDOW_STATE_DESTROYED, FUNC_NAME);
+
+  XResizeWindow (dsp->dsp, win->win,
+                 scm_to_uint (width),
+                 scm_to_uint (height));
+
+  return SCM_UNSPECIFIED;
+}
+
+xdisplay_t *get_display (SCM display) {
+  return XDISPLAY (valid_dsp (display, SCM_ARG1, XDISPLAY_STATE_OPEN, "get_display"));
+}
+
 /* INITIALIZATION */
 
 void

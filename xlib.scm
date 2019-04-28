@@ -42,6 +42,7 @@
 	x-unmap-window!
 	x-destroy-window!
 	x-clear-window!
+	x-resize-window!
 	x-clear-area!
 	x-create-pixmap!
 	x-copy-area!

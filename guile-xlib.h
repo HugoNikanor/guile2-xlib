@@ -144,6 +144,8 @@ SCM resource_id_hash;
 #define XDISPLAY(display) ((xdisplay_t *) SCM_SMOB_DATA (display))
 #define XSCREEN(screen)   ((xscreen_t *) SCM_SMOB_DATA (screen))
 
+xdisplay_t *get_display (SCM display);
+
 #define XDATA_ARCS            0
 #define XDATA_LINES           1
 #define XDATA_POINTS          2
@@ -222,6 +224,8 @@ SCM scm_x_next_event_x (SCM display, SCM event);
 SCM scm_x_peek_event_x (SCM display, SCM event);
 SCM scm_x_select_input_x (SCM window, SCM mask);
 SCM scm_x_window_event_x (SCM window, SCM mask, SCM event);
+
+SCM scm_x_resize_window_x (SCM window, SCM width, SCM height);
 
 void init_xlib_core (void);
 
