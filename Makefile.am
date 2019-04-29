@@ -9,8 +9,8 @@ AUTOMAKE_OPTIONS = gnu
 
 lib_LTLIBRARIES = libguilexlib.la
 
-BUILT_SOURCES = xlib.x
-libguilexlib_la_SOURCES = xlib.c $(BUILT_SOURCES)
+BUILT_SOURCES = guile-xlib.x
+libguilexlib_la_SOURCES = guile-xlib.c $(BUILT_SOURCES)
 libguilexlib_la_LDFLAGS = -version-info 0:0 -export-dynamic 
 libguilexlib_la_CFLAGS = $(GUILE_CFLAGS)
 libguilexlib_la_LIBADD = $(X_LIBS) $(X_PRE_LIBS) -lX11 $(X_EXTRA_LIBS) $(GUILE_LIBS)

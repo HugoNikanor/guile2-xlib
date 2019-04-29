@@ -1,5 +1,6 @@
-AC_INIT(xlib.c)
-AM_INIT_AUTOMAKE(guile2-xlib, 0.1)
+AC_INIT(guile2-xlib, 0.1)
+AC_CONFIG_SRCDIR(guile-xlib.c)
+AM_INIT_AUTOMAKE
 AC_CONFIG_MACRO_DIR([m4])
 AM_MAINTAINER_MODE
 
